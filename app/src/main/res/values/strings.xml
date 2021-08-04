@@ -13,12 +13,20 @@
     <string name="text_six">6</string>
     <string name="text_add">+</string>
     <string name="text_one">1</string>
+<<<<<<< HEAD
     <string name="text_bracket_open">(</string>
     <string name="text_bracket_close">)</string>
+=======
+    <string name="text_percent">%</string>
+>>>>>>> ee04a61 (hoan thanh app caculator)
     <string name="text_two">2</string>
     <string name="text_zero">0</string>
     <string name="text_three">3</string>
     <string name="text_point">.</string>
     <string name="text_equality">=</string>
+<<<<<<< HEAD
 
 </resources>
+=======
+</resources>
+>>>>>>> ee04a61 (hoan thanh app caculator)
