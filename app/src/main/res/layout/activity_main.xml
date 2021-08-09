@@ -1,171 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="com.example.caculatorapp.MainActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <EditText
-        android:id="@+id/txt_expression"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="end"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="60dp"
-        app:layout_constraintHeight_percent="0.3"
-        app:layout_constraintHorizontal_bias="0.422"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/txt_result"
-        android:layout_width="match_parent"
+        android:id="@+id/tv_calculator"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="35dp"
-        android:gravity="right"
+        android:textSize="@dimen/sp_45"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_expression" />
-    <TableLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.95" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:textSize="@dimen/sp_45"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_calculator"
+        app:layout_constraintWidth_percent="0.95" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonCE"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:backgroundTint="@color/color_whip"
+        android:text="@string/text_clear"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_result"
-        android:stretchColumns="*">
-        <TableRow android:layout_weight="1">
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_clear"
-                android:text="@string/text_clear"
-                android:background="@drawable/btn_action"
-                android:layout_height="match_parent"
-                android:textColor="@color/gray"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_div"
-                android:text="@string/text_divide"
-                android:background="@drawable/btn_operator"
-                android:layout_height="match_parent"
-                android:textColor="@color/gray" />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_mul"
-                android:text="@string/text_multiply"
-                android:background="@drawable/btn_operator"
-                android:layout_height="match_parent"
-                android:textColor="@color/gray" />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_delete"
-                android:text="@string/text_delete"
-                android:background="@drawable/btn_action"
-                android:layout_height="match_parent"
-                android:textColor="@color/gray" />
-        </TableRow>
-        <TableRow android:layout_weight="1">
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_seven"
-                android:text="@string/text_seven"
-                android:layout_height="match_parent"
-                android:background="@drawable/btn_number" />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_eight"
-                android:text="@string/text_eight"
-                android:background="@drawable/btn_number"
-                android:layout_height="match_parent" />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_nine"
-                android:text="@string/text_nine"
-                android:background="@drawable/btn_number"
-                android:layout_height="match_parent" />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_sub"
-                android:text="@string/text_sub"
-                android:background="@drawable/btn_operator"
-                android:layout_height="match_parent"
-                android:textColor="@color/gray" />
-        </TableRow>
-        <TableRow android:layout_weight="1">
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_four"
-                android:text="@string/text_four"
-                android:background="@drawable/btn_number"
-                android:layout_height="match_parent" />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_five"
-                android:text="@string/text_five"
-                android:background="@drawable/btn_number"
-                android:layout_height="match_parent" />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_six"
-                android:text="@string/text_six"
-                android:background="@drawable/btn_number"
-                android:layout_height="match_parent" />
-            <androidx.appcompat.widget.AppCompatButton android:text="@string/text_add"
-                android:id="@+id/btn_add"
-                android:background="@drawable/btn_operator"
-                android:layout_height="match_parent"
-                android:textColor="@color/gray" />
-        </TableRow>
-        <TableRow android:layout_weight="2">
-            <TableLayout android:layout_height="match_parent">
-                <TableRow android:layout_weight="1">
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_one"
-                        android:text="@string/text_one"
-                        android:layout_weight="1"
-                        android:background="@drawable/btn_number"
-                        android:layout_height="match_parent" />
-                </TableRow>
-                <TableRow android:layout_weight="1">
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_percent"
-                        android:text="@string/text_percent"
-                        android:layout_weight="1"
-                        android:background="@drawable/btn_number"
-                        android:layout_height="match_parent" />
-                </TableRow>
-            </TableLayout>
-            <TableLayout android:layout_height="match_parent">
-                <TableRow android:layout_weight="1">
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_two"
-                        android:text="@string/text_two"
-                        android:layout_weight="1"
-                        android:background="@drawable/btn_number"
-                        android:layout_height="match_parent" />
-                </TableRow>
-                <TableRow android:layout_weight="1">
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_zero"
-                        android:text="@string/text_zero"
-                        android:layout_weight="1"
-                        android:background="@drawable/btn_number"
-                        android:layout_height="match_parent" />
-                </TableRow>
-            </TableLayout>
-            <TableLayout android:layout_height="match_parent">
-                <TableRow android:layout_weight="1">
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_three"
-                        android:text="@string/text_three"
-                        android:layout_weight="1"
-                        android:background="@drawable/btn_number"
-                        android:layout_height="match_parent" />
-                </TableRow>
-                <TableRow android:layout_weight="1">
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_dot"
-                        android:text="@string/text_point"
-                        android:layout_weight="1"
-                        android:background="@drawable/btn_number"
-                        android:layout_height="match_parent" />
-                </TableRow>
-            </TableLayout>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintHeight_percent="0.09"
+        app:layout_constraintVertical_bias="0.55" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_Result"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/gray"
-                android:text="@string/text_equality"
-                android:textColor="@android:color/white" />
-        </TableRow>
-    </TableLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSeven"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_porcelain_70"
+        android:text="@string/text_seven"
+        app:layout_constraintTop_toBottomOf="@id/buttonCE"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/buttonCE"
+        app:layout_constraintHeight_percent="0.09" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonFour"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_porcelain_70"
+        android:text="@string/text_four"
+        app:layout_constraintTop_toBottomOf="@id/buttonSeven"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/buttonCE"
+        app:layout_constraintHeight_percent="0.09" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonOne"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_porcelain_70"
+        android:text="@string/text_one"
+        app:layout_constraintTop_toBottomOf="@id/buttonFour"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/buttonCE"
+        app:layout_constraintHeight_percent="0.09" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonDelete"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/text_delete"
+        app:layout_constraintTop_toBottomOf="@id/buttonOne"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/buttonCE"
+        app:layout_constraintHeight_percent="0.09" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonBracketOpen"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/text_bracket_open"
+        app:layout_constraintTop_toTopOf="@id/buttonCE"
+        app:layout_constraintLeft_toRightOf="@id/buttonCE"
+        app:layout_constraintBottom_toBottomOf="@id/buttonCE"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonEight"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_porcelain_70"
+        android:text="@string/text_eight"
+        app:layout_constraintTop_toTopOf="@id/buttonSeven"
+        app:layout_constraintBottom_toBottomOf="@id/buttonSeven"
+        app:layout_constraintLeft_toLeftOf="@id/buttonBracketOpen"
+        app:layout_constraintRight_toRightOf="@id/buttonBracketOpen" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonFive"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_porcelain_70"
+        android:text="@string/text_five"
+        app:layout_constraintTop_toTopOf="@id/buttonFour"
+        app:layout_constraintBottom_toBottomOf="@id/buttonFour"
+        app:layout_constraintLeft_toLeftOf="@id/buttonBracketOpen"
+        app:layout_constraintRight_toRightOf="@id/buttonBracketOpen" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonTwo"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_porcelain_70"
+        android:text="@string/text_two"
+        app:layout_constraintTop_toTopOf="@id/buttonOne"
+        app:layout_constraintBottom_toBottomOf="@id/buttonOne"
+        app:layout_constraintLeft_toLeftOf="@id/buttonBracketOpen"
+        app:layout_constraintRight_toRightOf="@id/buttonBracketOpen" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonZero"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_porcelain_70"
+        android:text="@string/text_zero"
+        app:layout_constraintTop_toTopOf="@id/buttonDelete"
+        app:layout_constraintBottom_toBottomOf="@id/buttonDelete"
+        app:layout_constraintLeft_toLeftOf="@id/buttonBracketOpen"
+        app:layout_constraintRight_toRightOf="@id/buttonBracketOpen" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonBracketClose"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/text_bracket_close"
+        app:layout_constraintTop_toTopOf="@id/buttonCE"
+        app:layout_constraintLeft_toRightOf="@id/buttonBracketOpen"
+        app:layout_constraintBottom_toBottomOf="@id/buttonCE"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonNine"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_porcelain_70"
+        android:text="@string/text_nine"
+        app:layout_constraintTop_toTopOf="@id/buttonSeven"
+        app:layout_constraintBottom_toBottomOf="@id/buttonSeven"
+        app:layout_constraintLeft_toLeftOf="@id/buttonBracketClose"
+        app:layout_constraintRight_toRightOf="@id/buttonBracketClose" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSix"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_porcelain_70"
+        android:text="@string/text_six"
+        app:layout_constraintTop_toTopOf="@id/buttonFour"
+        app:layout_constraintBottom_toBottomOf="@id/buttonFour"
+        app:layout_constraintLeft_toLeftOf="@id/buttonBracketClose"
+        app:layout_constraintRight_toRightOf="@id/buttonBracketClose" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonThree"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_porcelain_70"
+        android:text="@string/text_three"
+        app:layout_constraintTop_toTopOf="@id/buttonOne"
+        app:layout_constraintBottom_toBottomOf="@id/buttonOne"
+        app:layout_constraintLeft_toLeftOf="@id/buttonBracketClose"
+        app:layout_constraintRight_toRightOf="@id/buttonBracketClose" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonDot"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/text_point"
+        app:layout_constraintTop_toTopOf="@id/buttonDelete"
+        app:layout_constraintBottom_toBottomOf="@id/buttonDelete"
+        app:layout_constraintLeft_toLeftOf="@id/buttonBracketClose"
+        app:layout_constraintRight_toRightOf="@id/buttonBracketClose" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonAdd"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/text_add"
+        app:layout_constraintTop_toTopOf="@id/buttonCE"
+        app:layout_constraintLeft_toRightOf="@id/buttonBracketClose"
+        app:layout_constraintBottom_toBottomOf="@id/buttonCE"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSubtract"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/text_sub"
+        app:layout_constraintTop_toTopOf="@id/buttonSeven"
+        app:layout_constraintBottom_toBottomOf="@id/buttonSeven"
+        app:layout_constraintLeft_toLeftOf="@id/buttonAdd"
+        app:layout_constraintRight_toRightOf="@id/buttonAdd" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonMultiply"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/text_multiply"
+        app:layout_constraintTop_toTopOf="@id/buttonFour"
+        app:layout_constraintBottom_toBottomOf="@id/buttonFour"
+        app:layout_constraintLeft_toLeftOf="@id/buttonAdd"
+        app:layout_constraintRight_toRightOf="@id/buttonAdd" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonDivision"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/text_divide"
+        app:layout_constraintTop_toTopOf="@id/buttonOne"
+        app:layout_constraintBottom_toBottomOf="@id/buttonOne"
+        app:layout_constraintLeft_toLeftOf="@id/buttonAdd"
+        app:layout_constraintRight_toRightOf="@id/buttonAdd" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSolve"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_blue"
+        android:text="@string/text_equality"
+        app:layout_constraintTop_toTopOf="@id/buttonDelete"
+        app:layout_constraintBottom_toBottomOf="@id/buttonDelete"
+        app:layout_constraintLeft_toLeftOf="@id/buttonAdd"
+        app:layout_constraintRight_toRightOf="@id/buttonAdd" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
